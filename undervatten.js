@@ -1,9 +1,7 @@
 // --- Del 1: inställningar och grundläggande ---
 
-// 1. Hämta element och sätt upp canvas
-// Hämta canvas-elementet här:
-
-// Skapa din 2D-kontext (ctx) här:
+// 1. Setup
+// Ställ in canvas för 2d
 
 // Hämta knapparna #dyk, #ytan och #slapp-bubbla här:
 
@@ -13,7 +11,7 @@
 
 
 // 3. Skapa dina dataobjekt
-// Skapa objektet 'bubbla' med x, y och egenskapen spela (false från början)
+// Skapa objektet 'bubbla' med x, y och variabeln spela (false från början)
 
 // Skapa objektet 'ubat' med x och y
 
