@@ -53,3 +53,29 @@ Skapa en funktion `gameLoop()` som körs kontinuerligt:
 * **d)** Anropa `animeraBubbla()`.
 * **e)** Se till att loopen fortsätter snurra genom att använda `requestAnimationFrame`.
 * Glöm inte att anropa loopen en första gång längst ner i din kod så att den startar!
+
+---
+
+## Del 4: utmaning (valfri)
+
+**8. Objektet Fisk**  
+Skapa ett objekt `fisk` med:
+* Egenskaperna `x` (t.ex. `canvas.width + 50`), `y` (t.ex. 200) och `hastighet` (t.ex. 2).
+
+Skapa sedan följande funktioner:
+* En funktion `ritaFisk()` som ritar ut fisken med hjälp av canvas-former:
+   * **Kropp:** en ellips med `ctx.ellipse(fisk.x, fisk.y, radiusX, radiusY, rotation, 0, Math.PI * 2)`.
+   * **Stjärt:** en triangel (tre punkter med `moveTo` + `lineTo` + `closePath`).
+   * **Öga:** en liten fylld cirkel med `arc`.
+* En funktion `animeraFisk()` som minskar `fisk.x` med `fisk.hastighet`. När fisken passerar vänster kant (`fisk.x < -80`), återplacera den till höger med ett slumpmässigt `y`.
+* En funktion `kolliderar(fisk, annat)` som returnerar `true` om fisken och `annat` (ubåten) överlappar. Jämför kanterna på de båda objekten (AABB-kollision):
+   * `fisk.x + 55 > annat.x` och `fisk.x - 35 < annat.x + 120`
+   * `fisk.y + 18 > annat.y` och `fisk.y - 18 < annat.y + 80`
+
+*(Alternativt kan du lägga rita-, animera- och kollisionsfunktionerna som metoder direkt inuti `fisk`-objektet och använda `this.x` etc).*
+
+**9. Poäng och kollision**  
+* Lägg till en variabel `let poang = 0`.
+* I din befintliga `gameLoop()`: anropa `ritaFisk()` och `animeraFisk()`.
+* Om `kolliderar(fisk, ubat)` är sant: öka `poang` med 1 och flytta fisken till en ny slumpmässig position (t.ex. långt till höger och ett nytt `y`-värde).
+* Rita poängen på canvasen med `ctx.fillText("Poäng: " + poang, 10, 28)`.
