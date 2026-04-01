@@ -1,72 +1,67 @@
-// --- Del 1: inställningar och grundläggande ---
+﻿// --- Del 1: inställningar och grundläggande ---
 
-// 1. Setup
-// Ställ in canvas för 2d
-
-// Hämta knapparna #dyk, #ytan och #slapp-bubbla här:
-
-
-// 2. Ladda in bilden
-// Skapa ett Image-objekt för ubåten och sätt src till "./submarine.png"
+// 1. Hämta element och sätt upp canvas
+// Hämta canvas-elementet
+// Skapa en 2D-kontext (ctx)
+// Hämta knapparna .ubat-upp, .ubat-ner och .slapp-bubbla
 
 
-// 3. Skapa dina dataobjekt
-// Skapa objektet 'bubbla' med x, y och variabeln spela (false från början)
+// 2. Ladda in bilderna
+// Skapa ett Image-objekt för ubåten -> submarine.png
+// Skapa ett Image-objekt för bakgrunden -> hav.jpg
 
-// Skapa objektet 'ubat' med x och y
 
+// 3. Skapa dataobjekt
+// Skapa ett objekt ubat med x (t.ex. 100) och y (t.ex. 150)
+// Skapa ett objekt bubbla med x (t.ex. 250), y (t.ex. canvas.height) och spela: false
 
 
 // --- Del 2: rita på canvas ---
 
 // 4. Rita ubåten
 function ritaUbat() {
-    // Använd drawImage för att rita ut ubåtsbilden
+    // Använd drawImage med ubåtsbilden, ubat.x och ubat.y
     // Sätt bredd till 120 och höjd till 80
-    
+
 }
 
 // 5. Rita bubblan
 function ritaBubbla() {
-    // Använd canvas-metoder (beginPath, arc, fill/stroke) för att rita ut en cirkel.
-    // Sätt färgen till t.ex. rgba(255, 255, 255, 0.5)
-    
+    // Använd beginPath, fillStyle, arc och fill
+    // Sätt färgen till rgba(255, 255, 255, 0.5)
+
 }
 
 
 // --- Del 3: interaktion och animering ---
 
 // 6. Styra ubåten med knappar
-// Lägg till en eventlistener för "Dyk" (#dyk) som ökar ubåtens y-värde
-
-// Lägg till en eventlistener för "Upp till ytan" (#ytan) som minskar ubåtens y-värde
-
-
-// 7. Animera bubblan (logik)
-// Lägg till en eventlistener för "Släpp ut bubbla" (#slapp-bubbla) som sätter bubblans 'spela' till true
+// Lägg till click-lyssnare på .ubat-upp: minska ubat.y
+// Lägg till click-lyssnare på .ubat-ner: öka ubat.y
 
 
-function animeraBubbla() {
-    // Gör en if-sats: Om bubblan ska spelas (spela är true):
-    // 1. Minska bubblans y-värde (så den flyter uppåt)
-    // 2. Gör en ny if-sats: Om y-värdet blir mindre än t.ex. -50, 
-    //    återställ y till canvasens höjd (canvas.height) så den kommer från botten igen.
-    
+// 7. Animera bubblan
+// Lägg till click-lyssnare på .slapp-bubbla: sätt bubbla.spela = true
+
+function animerabubbla() {
+    // Om bubbla.spela är true: minska bubbla.y
+    // Om bubbla.y < -50: återställ y till canvas.height, välj nytt slumpmässigt x
+
 }
 
 
-// 8. Skapa animationsloopen
+// 8. Animationsloopen
 function gameLoop() {
-    // a) Rensa hela canvasen
-    
+    // a) Rita bakgrundsbilden över hela canvasen
+
     // b) Anropa ritaUbat()
-    
+
     // c) Anropa ritaBubbla()
-    
-    // d) Anropa animeraBubbla()
-    
-    // e) Använd requestAnimationFrame för att anropa gameLoop igen
-    
+
+    // d) Anropa animerabubbla()
+
+    // e) Fortsätt loopen med requestAnimationFrame(gameLoop)
+
 }
 
-// Starta loopen för första gången här!
+// Starta loopen!
