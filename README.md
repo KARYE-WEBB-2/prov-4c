@@ -1,6 +1,6 @@
 ﻿# Prov: undervattensvärlden
 
-**Fil att skriva i:** `undervatten.js`
+**Fil att skriva i:** `undervatten.js`  
 **Mål:** Gör canvas-animationen interaktiv och rita ut objekten under havet genom att lösa uppgifterna nedan.
 
 ## Del 1: inställningar och grundläggande
