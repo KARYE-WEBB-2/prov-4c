@@ -52,16 +52,6 @@ function animerabubbla() {
 
 // 8. Animationsloopen
 function gameLoop() {
-    // a) Rita bakgrundsbilden över hela canvasen
 
-    // b) Anropa ritaUbat()
-
-    // c) Anropa ritaBubbla()
-
-    // d) Anropa animerabubbla()
-
-    // e) Fortsätt loopen med requestAnimationFrame(gameLoop)
 
 }
-
-// Starta loopen!
