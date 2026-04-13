@@ -1,4 +1,4 @@
-﻿# Prov: undervattensvärlden
+# Prov: undervattensvärlden
 
 **Fil att skriva i:** `undervatten.js`  
 **Mål:** Gör canvas-animationen interaktiv och rita ut objekten under havet genom att lösa uppgifterna nedan.
@@ -8,7 +8,6 @@
 **1. Hämta element och sätt upp canvas**
 
 * Hämta canvas-elementet från HTML-koden.
-* Skapa en 2D-kontext (`ctx`) för att kunna rita.
 * Hämta de tre knapparna `.ubat-upp`, `.ubat-ner` och `.slapp-bubbla` från DOM:en och spara dem i variabler.
 
 **2. Ladda in bilderna**
@@ -74,3 +73,22 @@ Skapa en funktion `gameLoop()` som körs kontinuerligt för att uppdatera skärm
 
 * Kontrollera i `animerabubbla()` om bubblan krockar med ubåten.
 * Visa en `alert` eller logga ett meddelande i konsolen när en kollision inträffar och återställ bubblan till startpositionen.
+
+**5. Poäng och bubblor att undvika**
+
+* Lägg till en variabel `poang` som börjar på 0.
+* Varje gång en bubbla passerar ubåten utan kollision (dvs. bubblan når toppen), öka poängen med 1.
+* Visa poängen på canvasen med `ctx.fillText()` i varje bildruta.
+
+**6. Horisontell rörelse – ubåten driver**
+
+* Lägg till ett `dx`-värde i `ubat`-objektet, t.ex. `1`.
+* I `gameLoop()`, öka ubåtens x-värde med `dx` varje bildruta.
+* När ubåten når canvasens högra kant ska den "vända" – byt tecken på `dx` (från `1` till `-1` och vice versa).
+* *Tips: tänk på hur en studsboll fungerar!*
+
+**7. Rita en fiskstim**
+
+* Skapa en array `fiskar` med t.ex. fyra objekt, varje objekt har `x`, `y` och `hastighet`.
+* Rita varje fisk som en enkel form (t.ex. en triangel eller ellips) med `beginPath`.
+* I `gameLoop()`, flytta varje fisk åt vänster. När en fisk lämnar canvasens vänsterkant, återplacera den till höger med ett nytt slumpmässigt y-värde.
